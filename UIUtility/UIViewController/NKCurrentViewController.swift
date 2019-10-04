@@ -17,9 +17,9 @@ public protocol NKCurrentViewController where Self: UIViewController {
 extension NKCurrentViewController {
     
     var currentViewController: UIViewController? {
-        return nil
+        return self.findCurrentViewController()
     }
-    func findCurrentViewController(viewController vc: UIViewController?) -> UIViewController? {
+    func findCurrentViewController(viewController vc: UIViewController? = UIApplication.shared.delegate?.window??.rootViewController) -> UIViewController? {
         guard let base: UIViewController = vc else {
             return nil
         }

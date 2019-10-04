@@ -9,7 +9,10 @@
 import UIKit
 
 public protocol NKCurrentViewController where Self: UIViewController {
+    /// Returns the current ViewController.
     var currentViewController: UIViewController? { get }
+    /// Returns the current ViewController.
+    /// - Parameter vc: Origin ViewController
     func findCurrentViewController(viewController vc: UIViewController?) -> UIViewController?
 }
 
